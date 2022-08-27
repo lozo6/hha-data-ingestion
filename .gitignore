@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # ignores key.
-*.json
+*config.json
