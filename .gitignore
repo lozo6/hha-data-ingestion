@@ -128,5 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# ignores key
-lorenzo-507-5029d33fcb82.json
+# ignores key.
+*.json
