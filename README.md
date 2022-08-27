@@ -1,5 +1,14 @@
 # hha-data-ingestion
 
+Instructions: 
+Create a Github repo called ‘hha-data-ingestion’ in your account and write a python script (.py file) that does the following below (Section 1, Section 2, Section 2). 
+Please include a folder in the repo called 'data',  that contains the excel files that you use for Section 1. 
+Please provide PUBLIC repo,  GitHub URL when submitting this assignment. 
+Please use comments (# or """) in your .py script to let me know what you are doing. 
+If you run into any errors that you can't solve, please take screen shots of those errors, and put them into a 'error' folder inside of your github repo so I can see what they were. 
+
+Deliverables: 
+ 
 - Section 1: Find or create 1 excel (.xls) file that contains at least two tabs. Bring in the first tab as a data frame; label that dataset as ‘tab1’, and a second data frame that represents the 2nd tab of the excel file, name this 'tab2'   
             Resource: creating via your local computer, Kaggle (https://www.kaggle.com/datasets), healthdata.gov, etc.... 
 
