@@ -19,6 +19,6 @@ print(apiDataset)
 
 # Section 3
 client = bigquery.Client.from_service_account_json(r"C:\Users\loren\hha-data-ingestion\lorenzo-507-5029d33fcb82.json")
-query_job = client.query("SELECT * FROM `bigquery-public-data.stackoverflow.posts_questions` LIMIT 100") #error
+query_job = client.query("SELECT * FROM `bigquery-public-data.stackoverflow.posts_questions` LIMIT 100") #error db-types
 results = query_job.result()
-bigquery1 = pd.DataFrame(results.to_dataframe()) #error
+bigquery1 = pd.DataFrame(results.to_dataframe()) #error db-types
