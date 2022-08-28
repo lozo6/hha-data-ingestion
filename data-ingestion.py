@@ -11,7 +11,7 @@ sheet_names = xls.sheet_names()
 print(sheet_names)
 tab1 = pd.read_excel('~\\hha-data-ingestion\\data\\big3stocks.xls', sheet_name='AAPL')
 tab2 = pd.read_excel('~\\hha-data-ingestion\\data\\big3stocks.xls', sheet_name='AMZN')
-# print tab1, tab2
+# prints tab1, tab2
 print(tab1, '\n', tab2)
 
 # Section 2
