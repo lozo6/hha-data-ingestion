@@ -29,4 +29,5 @@ bigquery1 = pd.DataFrame(stackoverflow.to_dataframe()) # puts data in a formatte
 query_covid = client.query("SELECT * FROM `bigquery-public-data.covid19_open_data.compatibility_view` LIMIT 100") # pulls covid19 data from GCP
 covid19 = query_covid.result() # waits for results
 bigquery2 = pd.DataFrame(covid19.to_dataframe()) # puts data in a formatted DataFrame
+# prints bigquery1, bigquery2
 print(bigquery1, '\n', bigquery2)
