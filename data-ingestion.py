@@ -1,16 +1,20 @@
 import pandas as pd
-import json
 import requests
 from google.cloud import bigquery
+import xlrd
 
 # Section 1
-# read excel file
-tab1 = pd.read_excel('~\\hha-data-ingestion\\data-ingestion.xlsx', sheet_name='Sheet1')
-tab2 = pd.read_excel('~\\hha-data-ingestion\\data-ingestion.xlsx', sheet_name='Sheet2')
+# open_workbook excel file
+xls = xlrd.open_workbook(r"C:\Users\loren\hha-data-ingestion\data\big3stocks.xls", on_demand=True)
+# finds names of all sheets in excel file
+sheet_names = xls.sheet_names()
+print(sheet_names)
+tab1 = pd.read_excel('~\\hha-data-ingestion\\data\\big3stocks.xls', sheet_name='AAPL')
+tab2 = pd.read_excel('~\\hha-data-ingestion\\data\\big3stocks.xls', sheet_name='AMZN')
 # print tab1, tab2
 print(tab1, '\n', tab2)
 
-# # Section 2
+# Section 2
 #using request module for json api
 cms = requests.get('https://data.cms.gov/data-api/v1/dataset/647e8a75-2135-49a0-83a8-f3b12f687d18/data')
 apiDataset = cms.json()
