@@ -5,7 +5,7 @@ import xlrd
 
 # Section 1
 # open_workbook excel file
-xls = xlrd.open_workbook(r"C:\Users\loren\hha-data-ingestion\data\big3stocks.xls", on_demand=True)
+xls = xlrd.open_workbook("C:\\Users\\loren\\hha-data-ingestion\\data\\big3stocks.xls", on_demand=True)
 # finds names of all sheets in excel file
 sheet_names = xls.sheet_names()
 print(sheet_names)
@@ -22,7 +22,7 @@ apiDataset = cms.json()
 print(apiDataset)
 
 # Section 3
-client = bigquery.Client.from_service_account_json(r"C:\Users\loren\hha-data-ingestion\lorenzo-507-5029d33fcb82.json") # connects to GCP
+client = bigquery.Client.from_service_account_json("C:\\Users\\loren\\hha-data-ingestion\\lorenzo-507-5029d33fcb82.json") # connects to GCP
 query_stack = client.query("SELECT * FROM `bigquery-public-data.stackoverflow.posts_questions` LIMIT 100") # pulls stackoverflow data from GCP
 stackoverflow = query_stack.result() # waits for results
 bigquery1 = pd.DataFrame(stackoverflow.to_dataframe()) # puts data in a formatted DataFrame
