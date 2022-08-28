@@ -1,7 +1,7 @@
-import pandas as pd ## import pandas for general file types
+import pandas as pd
+import json
 import requests
 from google.cloud import bigquery
-import json
 
 # Section 1
 # read excel file
@@ -18,7 +18,11 @@ apiDataset = cms.json()
 print(apiDataset)
 
 # Section 3
-client = bigquery.Client.from_service_account_json(r"C:\Users\loren\hha-data-ingestion\lorenzo-507-5029d33fcb82.json")
-query_job = client.query("SELECT * FROM `bigquery-public-data.stackoverflow.posts_questions` LIMIT 100") #error db-types
-results = query_job.result()
-bigquery1 = pd.DataFrame(results.to_dataframe()) #error db-types
+client = bigquery.Client.from_service_account_json(r"C:\Users\loren\hha-data-ingestion\lorenzo-507-5029d33fcb82.json") # connects to GCP
+query_stack = client.query("SELECT * FROM `bigquery-public-data.stackoverflow.posts_questions` LIMIT 100") # pulls stackoverflow data from GCP
+stackoverflow = query_stack.result() # waits for results
+bigquery1 = pd.DataFrame(stackoverflow.to_dataframe()) # puts data in a formatted DataFrame
+query_covid = client.query("SELECT * FROM `bigquery-public-data.covid19_open_data.compatibility_view` LIMIT 100") # pulls covid19 data from GCP
+covid19 = query_covid.result() # waits for results
+bigquery2 = pd.DataFrame(covid19.to_dataframe()) # puts data in a formatted DataFrame
+print(bigquery1, '\n', bigquery2)
