@@ -6,13 +6,13 @@ import xlrd
 
 # Section 1
 # open_workbook excel file
-xls = xlrd.open_workbook('/Users/lozo/Documents/AHI Github/hha-data-ingestion/data/big3stocks.xls', on_demand=True)
+xls = xlrd.open_workbook('/Users/lozo/Documents/AHI_Github/hha-data-ingestion/data/big3stocks.xls', on_demand=True)
 # finds names of all sheets in excel file
 sheet_names = xls.sheet_names()
 print ('These are the names of all sheets in excel file')
 print(sheet_names)
-tab1 = pd.read_excel('/Users/lozo/Documents/AHI Github/hha-data-ingestion/data/big3stocks.xls', sheet_name='AAPL')
-tab2 = pd.read_excel('/Users/lozo/Documents/AHI Github/hha-data-ingestion/data/big3stocks.xls', sheet_name='AMZN')
+tab1 = pd.read_excel('/Users/lozo/Documents/AHI_Github/hha-data-ingestion/data/big3stocks.xls', sheet_name='AAPL')
+tab2 = pd.read_excel('/Users/lozo/Documents/AHI_Github/hha-data-ingestion/data/big3stocks.xls', sheet_name='AMZN')
 # prints tab1, tab2
 print('These are the dataframes from excel file in data directory')
 print(tab1, '\n', tab2)
