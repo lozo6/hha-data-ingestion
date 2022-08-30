@@ -28,10 +28,10 @@ print(apiDataset)
 #     print(key, ':', value)
 
 # Section 3
-client = bigquery.Client.from_service_account_json("/Users/lozo/Developer/AHI_Github/hha-data-ingestion/lorenzo-507-8637ff59c5f0.json") # connects to GCP
+client = bigquery.Client.from_service_account_json("/Users/lozo/Developer/AHI_Github/hha-data-ingestion/lorenzo-507-7e94418d2f74.json") # connects to GCP
 query_stack = client.query("SELECT * FROM `bigquery-public-data.hacker_news.stories` LIMIT 100") # pulls stackoverflow data from GCP
-stackoverflow = query_stack.result() # waits for results
-bigquery1 = pd.DataFrame(stackoverflow.to_dataframe()) # puts data in a formatted DataFrame
+hacker_news = query_stack.result() # waits for results
+bigquery1 = pd.DataFrame(hacker_news.to_dataframe()) # puts data in a formatted DataFrame
 query_covid = client.query("SELECT * FROM `bigquery-public-data.covid19_open_data.compatibility_view` LIMIT 100") # pulls covid19 data from GCP
 covid19 = query_covid.result() # waits for results
 bigquery2 = pd.DataFrame(covid19.to_dataframe()) # puts data in a formatted DataFrame
